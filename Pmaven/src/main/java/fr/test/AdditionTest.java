@@ -8,17 +8,27 @@ import org.junit.Test;
 
 public class AdditionTest {
 
-	@Test
-	public void testCtor() {
-		De d = new De();
-		assertNotNull(d);
-	}
-
-	@Test
-	public void testLancer() {
-		De d = new De();
-		int resultat = d.lancer();
-		assertTrue(resultat>0&&resultat<7);
-	}
+	protected Addition op;
+	 
+    @Before
+    public void setUp() {
+        op = new Addition();
+    }
+ 
+    @After
+    public void tearDown() {
+    }
+ 
+    @Test
+    public void testCalculer() throws Exception {
+        assertEquals(new Long(4), op.calculer(new Long(1),
+                                              new
+Long(3)));
+    }
+ 
+    @Test
+    public void testLireSymbole() throws Exception {
+        assertEquals((Character)'+', op.lireSymbole());
+    }
 
 }
