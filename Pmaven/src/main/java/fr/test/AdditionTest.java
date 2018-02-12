@@ -8,17 +8,17 @@ import org.junit.Test;
 
 public class AdditionTest {
 
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
+	@Test
+	public void testCtor() {
+		De d = new De();
+		assertNotNull(d);
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testLancer() {
+		De d = new De();
+		int resultat = d.lancer();
+		assertTrue(resultat>0&&resultat<7);
 	}
 
 }
