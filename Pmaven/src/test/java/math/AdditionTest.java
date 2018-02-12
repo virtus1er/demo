@@ -15,23 +15,27 @@ import org.junit.Test;
  */
 public class AdditionTest {
 
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@After
-	public void tearDown() throws Exception {
-	}
-
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
+	protected Addition op;
+	 
+    @Before
+    public void setUp() {
+        op = new Addition();
+    }
+ 
+    @After
+    public void tearDown() {
+    }
+ 
+    @Test
+    public void testCalculer() throws Exception {
+        assertEquals(new Long(4), op.calculer(new Long(1),
+                                              new
+Long(3)));
+    }
+ 
+    @Test
+    public void testLireSymbole() throws Exception {
+        assertEquals((Character)'+', op.lireSymbole());
+    }
 
 }
