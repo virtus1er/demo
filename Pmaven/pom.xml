@@ -4,85 +4,118 @@
 	<groupId>fr.virtus</groupId>
 	<artifactId>Pmaven</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	 <name>Datas module</name>
-    <packaging>jar</packaging>
+	<name>Datas module</name>
+	<packaging>jar</packaging>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+	<scm>
+
+		<connection>scm:git:https://github.com/alecharp/simple-app.git</connection>
+
+		<developerConnection>scm:git:https://github.com/alecharp/simple-app.git</developerConnection>
+
+		<url>https://github.com/alecharp/simple-app</url>
+
+	</scm>
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 			<version>3.3.2</version>
 		</dependency>
-		
+
+		<dependency>
+
+			<groupId>junit</groupId>
+
+			<artifactId>junit</artifactId>
+
+			<version>4.12</version>
+
+			<scope>test</scope>
+
+		</dependency>
+
+		<dependency>
+
+			<groupId>org.assertj</groupId>
+
+			<artifactId>assertj-core</artifactId>
+
+			<version>3.4.0</version>
+
+		</dependency>
+
+		<dependency>
+
+			<groupId>com.jayway.restassured</groupId>
+
+			<artifactId>rest-assured</artifactId>
+
+			<version>2.9.0</version>
+
+		</dependency>
+
 	</dependencies>
-	 <scm>
 
-    <connection>scm:git:https://github.com/alecharp/simple-app.git</connection>
+	<build>
 
-    <developerConnection>scm:git:https://github.com/alecharp/simple-app.git</developerConnection>
+		<plugins>
 
-    <url>https://github.com/alecharp/simple-app</url>
+			<plugin>
 
-  </scm>
-<build>
+				<groupId>org.springframework.boot</groupId>
 
-    <plugins>
+				<artifactId>spring-boot-maven-plugin</artifactId>
 
-      <plugin>
 
-        <groupId>org.springframework.boot</groupId>
+				<executions>
 
-        <artifactId>spring-boot-maven-plugin</artifactId>
+					<execution>
 
-        
-        <executions>
+						<goals>
 
-          <execution>
+							<goal>repackage</goal>
 
-            <goals>
+						</goals>
 
-              <goal>repackage</goal>
+					</execution>
 
-            </goals>
+				</executions>
 
-          </execution>
+			</plugin>
 
-        </executions>
+			<plugin>
 
-      </plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 
-      <plugin>
+				<artifactId>maven-failsafe-plugin</artifactId>
 
-        <groupId>org.apache.maven.plugins</groupId>
+				<version>2.18.1</version>
 
-        <artifactId>maven-failsafe-plugin</artifactId>
+				<executions>
 
-        <version>2.18.1</version>
+					<execution>
 
-        <executions>
+						<goals>
 
-          <execution>
+							<goal>integration-test</goal>
 
-            <goals>
+							<goal>verify</goal>
 
-              <goal>integration-test</goal>
+						</goals>
 
-              <goal>verify</goal>
+					</execution>
 
-            </goals>
+				</executions>
 
-          </execution>
+			</plugin>
 
-        </executions>
+		</plugins>
 
-      </plugin>
-
-    </plugins>
-
-  </build>
+	</build>
 </project>
 
